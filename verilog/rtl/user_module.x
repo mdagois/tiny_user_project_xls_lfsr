@@ -1,11 +1,4 @@
 fn lfsr8(n: u8) -> u8 {
-    //let bit3 = (n >> 3) as u1;
-    //let bit4 = (n >> 4) as u1;
-    //let bit5 = (n >> 5) as u1;
-    //let bit7 = (n >> 7) as u1;
-    //let new_bit = (bit3 ^ bit4 ^ bit5 ^ bit7) as u8;
-    //(n << 1) | new_bit
-
     n[0+:u7] ++ (n[3+:u1] ^ n[4+:u1] ^ n[5+:u1] ^ n[7+:u1])
 }
 
