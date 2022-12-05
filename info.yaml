@@ -4,8 +4,7 @@ project:
   wokwi_id: 0
   source_files:
     - verilog/rtl/user_module.v
-    - verilog/rtl/top.v
-  top_module:  "top"
+  top_module:  "user_module"
 
 # As everyone will have access to all designs, try to make it easy for someone new to your design to know what
 # it does and how to operate it.
@@ -34,6 +33,13 @@ documentation:
     - bit5
     - bit6
     - bit7
+    - bit8
+    - bit9
+    - bit10
+    - bit11
+    - bit12
+    - bit13
+    - bit14
   outputs:
     - count0
     - count1
@@ -43,3 +49,10 @@ documentation:
     - count5
     - count6
     - count7
+    - count8
+    - count9
+    - count10
+    - count11
+    - count12
+    - count13
+    - count14
