@@ -20,5 +20,5 @@ fn __user_module__lfsr8(n: bits[8]) -> bits[8] {
 }
 
 top fn __user_module__user_module(io_in: bits[8]) -> bits[8] {
-  ret invoke.17: bits[8] = invoke(io_in, to_apply=__user_module__lfsr8, id=17, pos=[(0,269,9)])
+  ret invoke.17: bits[8] = invoke(io_in, to_apply=__user_module__lfsr8, id=17, pos=[(0,2321,9)])
 }
