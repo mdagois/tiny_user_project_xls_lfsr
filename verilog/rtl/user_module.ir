@@ -2,26 +2,23 @@ package user_module
 
 file_number 0 "fake_file.x"
 
-fn __user_module__popcount(v: bits[8]) -> bits[8] {
-  literal.2: bits[1] = literal(value=1, id=2, pos=[(0,5,21)])
-  shrl.3: bits[8] = shrl(v, literal.2, id=3, pos=[(0,5,18)])
-  literal.4: bits[8] = literal(value=85, id=4, pos=[(0,5,29)])
-  and.5: bits[8] = and(shrl.3, literal.4, id=5, pos=[(0,5,24)])
-  v__1: bits[8] = sub(v, and.5, id=6, pos=[(0,5,12)])
-  literal.9: bits[2] = literal(value=2, id=9, pos=[(0,6,33)])
-  literal.7: bits[8] = literal(value=51, id=7, pos=[(0,6,18)])
-  shrl.10: bits[8] = shrl(v__1, literal.9, id=10, pos=[(0,6,30)])
-  literal.11: bits[8] = literal(value=51, id=11, pos=[(0,6,41)])
-  and.8: bits[8] = and(v__1, literal.7, id=8, pos=[(0,6,13)])
-  and.12: bits[8] = and(shrl.10, literal.11, id=12, pos=[(0,6,36)])
-  v__2: bits[8] = add(and.8, and.12, id=13, pos=[(0,6,24)])
-  literal.14: bits[3] = literal(value=4, id=14, pos=[(0,7,13)])
-  shrl.15: bits[8] = shrl(v__2, literal.14, id=15, pos=[(0,7,10)])
-  add.16: bits[8] = add(v__2, shrl.15, id=16, pos=[(0,7,5)])
-  literal.17: bits[8] = literal(value=15, id=17, pos=[(0,7,21)])
-  ret and.18: bits[8] = and(add.16, literal.17, id=18, pos=[(0,7,16)])
+fn __user_module__lfsr8(n: bits[8]) -> bits[8] {
+  literal.4: bits[8] = literal(value=3, id=4, pos=[(0,1,19)])
+  literal.6: bits[8] = literal(value=4, id=6, pos=[(0,1,30)])
+  dynamic_bit_slice.5: bits[1] = dynamic_bit_slice(n, literal.4, width=1, id=5, pos=[(0,1,18)])
+  dynamic_bit_slice.7: bits[1] = dynamic_bit_slice(n, literal.6, width=1, id=7, pos=[(0,1,29)])
+  literal.9: bits[8] = literal(value=5, id=9, pos=[(0,1,41)])
+  xor.8: bits[1] = xor(dynamic_bit_slice.5, dynamic_bit_slice.7, id=8, pos=[(0,1,26)])
+  dynamic_bit_slice.10: bits[1] = dynamic_bit_slice(n, literal.9, width=1, id=10, pos=[(0,1,40)])
+  literal.12: bits[8] = literal(value=7, id=12, pos=[(0,1,52)])
+  literal.2: bits[8] = literal(value=0, id=2, pos=[(0,1,6)])
+  xor.11: bits[1] = xor(xor.8, dynamic_bit_slice.10, id=11, pos=[(0,1,37)])
+  dynamic_bit_slice.13: bits[1] = dynamic_bit_slice(n, literal.12, width=1, id=13, pos=[(0,1,51)])
+  dynamic_bit_slice.3: bits[7] = dynamic_bit_slice(n, literal.2, width=7, id=3, pos=[(0,1,5)])
+  xor.14: bits[1] = xor(xor.11, dynamic_bit_slice.13, id=14, pos=[(0,1,48)])
+  ret concat.15: bits[8] = concat(dynamic_bit_slice.3, xor.14, id=15, pos=[(0,1,13)])
 }
 
 top fn __user_module__user_module(io_in: bits[8]) -> bits[8] {
-  ret invoke.20: bits[8] = invoke(io_in, to_apply=__user_module__popcount, id=20, pos=[(0,21,10)])
+  ret invoke.17: bits[8] = invoke(io_in, to_apply=__user_module__lfsr8, id=17, pos=[(0,269,9)])
 }
