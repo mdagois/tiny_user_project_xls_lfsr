@@ -3377,7 +3377,7 @@ MACRO tiny_user_project
   END wbs_we_i
   OBS
       LAYER Metal1 ;
-        RECT 6.720 8.550 593.040 663.450 ;
+        RECT 6.720 8.550 598.550 663.450 ;
       LAYER Metal2 ;
         RECT 0.140 679.300 598.500 679.700 ;
         RECT 0.860 675.700 6.420 679.300 ;

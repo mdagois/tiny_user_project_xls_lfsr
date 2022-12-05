@@ -8044,18 +8044,14 @@ NETS 416 ;
       + ROUTED Metal3 ( 3596880 2582720 0 ) ( 3600240 * )
       NEW Metal2 ( 3293360 3920 0 ) ( * 1755600 )
       NEW Metal3 ( 3293360 1755600 ) ( 3600240 * )
-      NEW Metal4 ( 3600240 2292080 ) ( * 2344720 )
-      NEW Metal2 ( 3600240 1755600 ) ( * 2292080 )
-      NEW Metal2 ( 3600240 2344720 ) ( * 2582720 )
+      NEW Metal3 ( 3600240 2321200 ) ( * 2327920 )
+      NEW Metal2 ( 3600240 1755600 ) ( * 2321200 )
+      NEW Metal2 ( 3600240 2327920 ) ( * 2582720 )
       NEW Metal2 ( 3600240 2582720 ) Via2_VH
       NEW Metal2 ( 3293360 1755600 ) Via2_VH
       NEW Metal2 ( 3600240 1755600 ) Via2_VH
-      NEW Metal2 ( 3600240 2292080 ) Via2_VH
-      NEW Metal3 ( 3600240 2292080 ) Via3_HV
-      NEW Metal2 ( 3600240 2344720 ) Via2_VH
-      NEW Metal3 ( 3600240 2344720 ) Via3_HV
-      NEW Metal3 ( 3600240 2292080 ) RECT ( -660 -280 0 280 ) 
-      NEW Metal3 ( 3600240 2344720 ) RECT ( -660 -280 0 280 )  ;
+      NEW Metal2 ( 3600240 2321200 ) Via2_VH
+      NEW Metal2 ( 3600240 2327920 ) Via2_VH ;
     - la_data_out[21] ( PIN la_data_out[21] ) ( mprj la_data_out[21] ) + USE SIGNAL
       + ROUTED Metal2 ( 3343760 3920 ) ( 3349360 * )
       NEW Metal2 ( 3349360 3920 ) ( * 5040 )
@@ -8965,18 +8961,16 @@ NETS 416 ;
       NEW Metal2 ( 3601360 3376800 ) ( * 3705520 )
       NEW Metal2 ( 3427760 3920 0 ) ( * 2293200 )
       NEW Metal3 ( 3267600 3705520 ) ( 3601360 * )
-      NEW Metal4 ( 3599120 2293200 ) ( * 2343600 )
-      NEW Metal3 ( 3427760 2293200 ) ( 3599120 * )
-      NEW Metal2 ( 3599120 2343600 ) ( * 3376800 )
+      NEW Metal2 ( 3601360 2293200 ) ( * 2325680 )
+      NEW Metal2 ( 3599120 2325680 ) ( 3601360 * )
+      NEW Metal3 ( 3427760 2293200 ) ( 3601360 * )
+      NEW Metal2 ( 3599120 2325680 ) ( * 3376800 )
       NEW Metal2 ( 3267600 3677520 ) Via2_VH
       NEW Metal2 ( 3267600 3680880 ) Via2_VH
       NEW Metal2 ( 3267600 3705520 ) Via2_VH
       NEW Metal2 ( 3601360 3705520 ) Via2_VH
       NEW Metal2 ( 3427760 2293200 ) Via2_VH
-      NEW Metal3 ( 3599120 2293200 ) Via3_HV
-      NEW Metal2 ( 3599120 2343600 ) Via2_VH
-      NEW Metal3 ( 3599120 2343600 ) Via3_HV
-      NEW Metal3 ( 3599120 2343600 ) RECT ( -660 -280 0 280 )  ;
+      NEW Metal2 ( 3601360 2293200 ) Via2_VH ;
     - la_oenb[23] ( PIN la_oenb[23] ) ( mprj la_oenb[23] ) + USE SIGNAL
       + ROUTED Metal2 ( 3032400 46480 ) ( * 883120 )
       NEW Metal1 ( 2756880 2318960 ) ( * 2323440 )

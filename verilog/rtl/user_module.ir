@@ -19,6 +19,23 @@ fn __user_module__lfsr8(n: bits[8]) -> bits[8] {
   ret concat.15: bits[8] = concat(dynamic_bit_slice.3, xor.14, id=15, pos=[(0,1,13)])
 }
 
-top fn __user_module__user_module(io_in: bits[8]) -> bits[8] {
-  ret invoke.17: bits[8] = invoke(io_in, to_apply=__user_module__lfsr8, id=17, pos=[(0,2321,9)])
+fn __user_module__lfsr7(n: bits[7]) -> bits[7] {
+  literal.19: bits[7] = literal(value=5, id=19, pos=[(0,5,19)])
+  literal.21: bits[7] = literal(value=6, id=21, pos=[(0,5,30)])
+  literal.17: bits[7] = literal(value=0, id=17, pos=[(0,5,6)])
+  dynamic_bit_slice.20: bits[1] = dynamic_bit_slice(n, literal.19, width=1, id=20, pos=[(0,5,18)])
+  dynamic_bit_slice.22: bits[1] = dynamic_bit_slice(n, literal.21, width=1, id=22, pos=[(0,5,29)])
+  dynamic_bit_slice.18: bits[6] = dynamic_bit_slice(n, literal.17, width=6, id=18, pos=[(0,5,5)])
+  xor.23: bits[1] = xor(dynamic_bit_slice.20, dynamic_bit_slice.22, id=23, pos=[(0,5,26)])
+  ret concat.24: bits[7] = concat(dynamic_bit_slice.18, xor.23, id=24, pos=[(0,5,13)])
+}
+
+top fn __user_module__user_module(io_in: bits[15]) -> bits[15] {
+  literal.26: bits[15] = literal(value=0, id=26, pos=[(0,9,16)])
+  literal.29: bits[15] = literal(value=8, id=29, pos=[(0,9,39)])
+  dynamic_bit_slice.27: bits[8] = dynamic_bit_slice(io_in, literal.26, width=8, id=27, pos=[(0,9,15)])
+  dynamic_bit_slice.30: bits[7] = dynamic_bit_slice(io_in, literal.29, width=7, id=30, pos=[(0,9,38)])
+  invoke.28: bits[8] = invoke(dynamic_bit_slice.27, to_apply=__user_module__lfsr8, id=28, pos=[(0,9,9)])
+  invoke.31: bits[7] = invoke(dynamic_bit_slice.30, to_apply=__user_module__lfsr7, id=31, pos=[(0,9,32)])
+  ret concat.32: bits[15] = concat(invoke.28, invoke.31, id=32, pos=[(0,9,24)])
 }

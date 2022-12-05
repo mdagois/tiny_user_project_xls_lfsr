@@ -1,9 +1,9 @@
 magic
 tech gf180mcuC
 magscale 1 5
-timestamp 1670225573
+timestamp 1670228494
 << obsm1 >>
-rect 120353 115879 179304 182345
+rect 120353 115879 179855 182345
 << metal2 >>
 rect 5516 297780 5628 298500
 rect 16548 297780 16660 298500
@@ -2206,8 +2206,8 @@ port 418 nsew signal input
 string FIXED_BBOX 0 0 298020 298020
 string LEFclass BLOCK
 string LEFview TRUE
-string GDS_END 4771988
-string GDS_FILE /home/runner/work/tiny_user_project_xls_lfsr/tiny_user_project_xls_lfsr/openlane/user_project_wrapper/runs/22_12_05_07_31/results/signoff/user_project_wrapper.magic.gds
-string GDS_START 1676266
+string GDS_END 4800674
+string GDS_FILE /home/runner/work/tiny_user_project_xls_lfsr/tiny_user_project_xls_lfsr/openlane/user_project_wrapper/runs/22_12_05_08_20/results/signoff/user_project_wrapper.magic.gds
+string GDS_START 1705208
 << end >>
 

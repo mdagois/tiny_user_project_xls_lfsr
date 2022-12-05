@@ -2,12 +2,16 @@ package user_module
 
 file_number 0 "fake_file.x"
 
-top fn __user_module__user_module(io_in: bits[8]) -> bits[8] {
-  bit_slice.28: bits[1] = bit_slice(io_in, start=3, width=1, id=28, pos=[(0,1,18)])
-  bit_slice.29: bits[1] = bit_slice(io_in, start=4, width=1, id=29, pos=[(0,1,29)])
-  bit_slice.30: bits[1] = bit_slice(io_in, start=5, width=1, id=30, pos=[(0,1,40)])
-  bit_slice.31: bits[1] = bit_slice(io_in, start=7, width=1, id=31, pos=[(0,1,51)])
-  bit_slice.32: bits[7] = bit_slice(io_in, start=0, width=7, id=32, pos=[(0,1,5)])
-  xor.33: bits[1] = xor(bit_slice.28, bit_slice.29, bit_slice.30, bit_slice.31, id=33, pos=[(0,1,48)])
-  ret concat.34: bits[8] = concat(bit_slice.32, xor.33, id=34, pos=[(0,1,13)])
+top fn __user_module__user_module(io_in: bits[15]) -> bits[15] {
+  bit_slice.60: bits[1] = bit_slice(io_in, start=3, width=1, id=60, pos=[(0,1,18)])
+  bit_slice.61: bits[1] = bit_slice(io_in, start=4, width=1, id=61, pos=[(0,1,29)])
+  bit_slice.62: bits[1] = bit_slice(io_in, start=5, width=1, id=62, pos=[(0,1,40)])
+  bit_slice.63: bits[1] = bit_slice(io_in, start=7, width=1, id=63, pos=[(0,1,51)])
+  bit_slice.65: bits[1] = bit_slice(io_in, start=13, width=1, id=65, pos=[(0,5,18)])
+  bit_slice.66: bits[1] = bit_slice(io_in, start=14, width=1, id=66, pos=[(0,5,29)])
+  bit_slice.64: bits[7] = bit_slice(io_in, start=0, width=7, id=64, pos=[(0,1,5)])
+  xor.53: bits[1] = xor(bit_slice.60, bit_slice.61, bit_slice.62, bit_slice.63, id=53, pos=[(0,1,48)])
+  bit_slice.67: bits[6] = bit_slice(io_in, start=8, width=6, id=67, pos=[(0,5,5)])
+  xor.58: bits[1] = xor(bit_slice.65, bit_slice.66, id=58, pos=[(0,5,26)])
+  ret concat.68: bits[15] = concat(bit_slice.64, xor.53, bit_slice.67, xor.58, id=68, pos=[(0,9,24)])
 }
